@@ -1,54 +1,18 @@
-"use client";
+import Link from 'next/link';
 
-import { Button } from "../ui/Button";
-
-interface NavigationItem {
-  label: string;
-  url: string;
-}
-
-const navItems: NavigationItem[] = [
-  { label: "Product", url: "#" },
-  { label: "Journal", url: "#" },
-  { label: "About", url: "#" },
-  { label: "Careers", url: "#" },
-];
-
-export const Navbar = () => {
+export default function Navbar() {
   return (
-    <nav className="w-full px-5 md:px-8 lg:px-12 py-5">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-
-        {/* Logo */}
-        <h1 className="text-2xl font-bold tracking-tight">
-          Aetherfield
-        </h1>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.url}
-              className="text-sm font-medium hover:text-gray-500 transition"
-            >
-              {item.label}
-            </a>
-          ))}
-
-          <Button variant="primary">
-            Get Started
-          </Button>
-        </div>
-
-        {/* Mobile Button */}
-        <div className="md:hidden">
-          <Button variant="primary">
-            Menu
-          </Button>
-        </div>
-
+    <nav className="flex justify-between items-center p-6">
+      <Link href="/" className="font-bold text-xl">Aetherfield</Link>
+      
+      <div className="flex gap-6">
+        <Link href="/product">Product</Link>
+        {/* Yahan journal ka link */}
+        <Link href="/journal">Journal</Link> 
+        <Link href="/about">About</Link>
+        <Link href="/careers">Careers</Link>
+        <Link href="/get-started" className="font-bold">Get started →</Link>
       </div>
     </nav>
   );
-};
+}

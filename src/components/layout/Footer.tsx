@@ -1,29 +1,34 @@
-// src/components/layout/Footer.tsx
+import Link from 'next/link';
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="w-full bg-[#5C5C26] pt-16 pb-8 px-6 md:px-12 border-t-2 border-black">
-      <div className="max-w-7xl mx-auto flex flex-col">
-        
-        {/* Links Section (Ab upar aa gaya hai) */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 pb-8 border-b border-[#F8F94D]/20 text-[#F8F94D] text-sm font-medium">
-          <div className="flex gap-8">
-            <a href="#" className="hover:underline">Product</a>
-            <a href="#" className="hover:underline">Journal</a>
-            <a href="#" className="hover:underline">About</a>
-            <a href="#" className="hover:underline">Careers</a>
-          </div>
-          <div className="mt-4 md:mt-0">© 2025 - All rights reserved</div>
+    <footer className="w-full bg-[#E4E63B] text-[#555D28] pt-10">
+      {/* Top Links Section */}
+      <div className="max-w-[1280px] mx-auto px-5 pb-10 flex flex-wrap justify-between items-center text-sm font-semibold">
+        <div className="flex gap-6">
+          <Link href="/product">Product</Link>
+          <Link href="/journal">Journal</Link>
+          <Link href="/about">About</Link>
+          <Link href="/careers">Careers</Link>
+          <Link href="/get-started">Get started</Link>
         </div>
+        <div>© 2025 · All rights reserved</div>
+      </div>
 
-        {/* Aetherfield Bold Text (Links ke neeche) */}
-        <div className="text-[15vw] md:text-[200px] font-black leading-[0.75] tracking-tighter text-[#F8F94D] uppercase select-none">
+      {/* Textured Background Section */}
+      <div 
+        className="w-full h-[400px] flex items-end justify-start px-5 pb-10"
+        style={{
+          backgroundImage: "url('/images/footer-texture.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundColor: "#E4E63B" // Base yellow-greenish color
+        }}
+      >
+        <h1 className="text-[12rem] font-bold leading-none text-[#555D28] tracking-tighter">
           Aetherfield
-        </div>
-        
+        </h1>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

@@ -1,41 +1,25 @@
-"use client";
-
-import { Navbar } from "@/components/layout/Navbar";
+// src/app/page.tsx
+import HeroSection from "@/components/home/HeroSection";
+import DashboardSection from "@/components/home/DashboardSection";
+import FeatureSection from "@/components/home/FeatureSection";
+import ActionSection from "@/components/home/ActionSection";
+import CaseStudySection from "@/components/home/CaseStudySection";
+import JournalSection from "@/components/home/JournalSection";
+import TestimonialSection from "@/components/home/TestimonialSection";
+import CTASection from "@/components/home/CTASection";
 import Footer from "@/components/layout/Footer";
-
-import { HeroSection } from "@/components/sections/HeroSection";
-import { DashboardPreview } from "@/components/sections/DashboardPreview";
-import { Features } from "@/components/sections/Features";
-import { ClaritySection } from "@/components/sections/ClaritySection";
-import { CaseStudy } from "@/components/sections/CaseStudy";
-import { JournalSection } from "@/components/sections/JournalSection";
-import { Testimonial } from "@/components/sections/Testimonial";
-import { CTASection } from "@/components/sections/CTASection";
-
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#d1e7ff] to-[#fffaf0] text-gray-900">
-
-      <Navbar />
-
+    <main className="min-h-screen pt-24">
       <HeroSection />
-
-      <DashboardPreview />
-
-      <Features />
-
-      <ClaritySection />
-
-      <CaseStudy />
-
-      <JournalSection />
-
-      <Testimonial />
-
-      <CTASection />
-
-      <Footer />
-
+      <DashboardSection />
+      <FeatureSection />
+      <ActionSection />
+      <CaseStudySection />
+      <JournalSection/>
+      <TestimonialSection/>
+      <CTASection/>
+      <Footer/>
     </main>
   );
 }
